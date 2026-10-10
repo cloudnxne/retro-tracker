@@ -1,0 +1,101 @@
+/*
+ * Design tokens. See DESIGN.md.
+ * Dark = "Sunset Chrome", light = "Daylight". The layout is shared; fonts switch with the theme.
+ * Each colour has ONE meaning (see DESIGN.md). Don't reuse a token for something else.
+ * The theme is resolved to data-theme="dark" | "light" on <html> before first paint (index.html + src/lib/theme.ts).
+ */
+:root {
+  --bg: #16131a;
+  --surface: #221d27;
+  --surface-2: #2e2834; /* secondary buttons, stepper keys */
+  --line: #2e2834;
+  --text: #f5f0ec;
+  --muted: #b7aeb8;
+  --active: #ff8a6b; /* active set label + active dot */
+  --accent: linear-gradient(90deg, #ff9a4d, #ff5f6d 55%, #e2458f); /* DONE / primary fill only */
+  --on-accent: #1a1017;
+  --done: #5ee0a0; /* ✓ + done dots + sync ok */
+  --rest: #ff6a8a; /* rest timer */
+  --rpe: #f5c84c; /* RPE, DELOAD */
+  --warn: #ff9f43; /* sync failed, destructive outline */
+  --plate: #2e2834;
+  --card-border: 0 solid transparent;
+  --stripe-1: #ffb347;
+  --stripe-2: #ff6a5c;
+  --stripe-3: #e2458f;
+  --backdrop: rgb(10 8 12 / 0.6);
+
+  --font-ui: 'Space Grotesk', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --display-weight: 700;
+  --display-style: normal;
+  --display-tracking: -0.03em;
+
+  --fs-label: 14px;
+  --fs-body: 16px;
+  --fs-meta: 20px;
+  --fs-name: 26px;
+  --fs-big: 64px;
+  --fs-sheet: 56px;
+  --fs-timer: 32px;
+
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 16px;
+  --s4: 24px;
+  --s5: 32px;
+
+  --r-ctl: 12px;
+  --r-card: 22px;
+  --r-btn: 18px;
+  --r-sheet: 22px;
+  --tap: 48px;
+  --tap-big: 64px;
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-pulse: 150ms;
+  --t-slide: 200ms;
+  --t-sheet: 220ms;
+
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --line: #e3e5ea;
+  --text: #111318;
+  --muted: #555b68;
+  --active: #0a7a89;
+  --accent: #0a7a89;
+  --on-accent: #ffffff;
+  --done: #15803d;
+  --rest: #d6246e;
+  --rpe: #a16207;
+  --warn: #c2410c;
+  --plate: #e8eaef;
+  /* Daylight sun: the light theme's teal (its DONE colour), light to deep, the way the dark sun uses
+     the dark theme's sunset gradient. */
+  --stripe-1: #2bb5c2;
+  --stripe-2: #0a7a89;
+  --stripe-3: #065a65;
+  --card-border: 1px solid #e3e5ea;
+  --backdrop: rgb(17 19 24 / 0.35);
+
+  --font-ui: 'Archivo', system-ui, sans-serif;
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-style: italic;
+  --display-tracking: -0.01em;
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-pulse: 0ms;
+    --t-slide: 0ms;
+    --t-sheet: 0ms;
+  }
+}

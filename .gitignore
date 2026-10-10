@@ -1,0 +1,12 @@
+node_modules
+dist
+dev-dist
+migration-output
+.env*
+!.env.example
+test-results
+playwright-report
+*.tsbuildinfo
+*.local.test.ts
+
+.vercel

@@ -1,0 +1,8 @@
+# Personal data and local-only files never leave this machine.
+migration-output
+node_modules
+test-results
+playwright-report
+*.local.test.ts
+.env*
+!.env.example

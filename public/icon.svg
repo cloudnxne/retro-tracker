@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- App icon: setting sun over a dark horizon. Content sits inside the central 80% so Android's
+       maskable crop (circle / squircle) never clips it. -->
+  <defs>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb347"/>
+      <stop offset="0.55" stop-color="#ff6a5c"/>
+      <stop offset="1" stop-color="#e2458f"/>
+    </linearGradient>
+    <mask id="cuts">
+      <rect width="512" height="512" fill="#fff"/>
+      <rect y="262" width="512" height="12" fill="#000"/>
+      <rect y="292" width="512" height="16" fill="#000"/>
+      <rect y="326" width="512" height="21" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="512" height="512" fill="#16131a"/>
+  <path d="M116 360 A140 140 0 0 1 396 360 Z" fill="url(#sun)" mask="url(#cuts)"/>
+  <rect x="96" y="372" width="320" height="6" rx="3" fill="#e2458f" opacity="0.55"/>
+</svg>
